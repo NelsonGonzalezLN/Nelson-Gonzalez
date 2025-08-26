@@ -60,4 +60,18 @@ Módulo con funciones que se reutilizan
     IO.puts(:standard_error, mensaje)
   end
 
+  def ingresar(mensaje, :real) do
+    try do mensaje
+      |> ingresar(:texto)
+      |> String.to_float()
+    rescue
+      ArgumentError ->
+        "Error, se espera que ingrese un número real\n"
+        |> mostrar_error()
+
+        mensaje
+        |> ingresar(:real)
+    end
+  end
+
 end
