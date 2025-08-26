@@ -25,9 +25,12 @@ defmodule EntradaEnteros do
   defp generar_mensaje(valor_descuento, valor_final) do
     valor_descuento = valor_descuento
     |> Float.round(1)
+    |> Float.to_string(decimals: 2)
 
     valor_final = valor_final
     |> Float.round(1)
+    |> Float.to_string(decimals: 2)
+
 
     "Valor de descuento de $#{valor_descuento} y el valor final $#{valor_final}"
   end
