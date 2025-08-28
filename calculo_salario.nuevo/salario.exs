@@ -14,18 +14,18 @@ defmodule EntradaEnteros do
 
 
     extra = calcular_extra(salario_base, horas_extra)
-    salario_neto = calcular_salario_neto(salario_bruto)
+    salario_neto = calcular_salario_neto(salario_base, extra)
 
     generar_mensaje(nombre_usuario, salario_neto)
     |> Util.mostrar_mensaje()
   end
 
   defp calcular_extra(salario, horas) do
-    salario * horas * 1.5
+    salario * horas * 0.5
   end
 
-  defp calcular_salario_neto(salario) do
-    salario * 1.5
+  defp calcular_salario_neto(salario, extra) do
+    salario + extra
   end
 
   defp generar_mensaje(nombre, salario) do
