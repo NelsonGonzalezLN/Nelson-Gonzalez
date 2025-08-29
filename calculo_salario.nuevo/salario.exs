@@ -1,4 +1,4 @@
-defmodule EntradaEnteros do
+defmodule Salarios do
 
   def main do
 
@@ -37,4 +37,4 @@ defmodule EntradaEnteros do
   end
 end
 
-EntradaEnteros.main()
+Salarios.main()
